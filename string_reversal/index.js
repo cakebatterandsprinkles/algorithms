@@ -1,10 +1,4 @@
-// --- Directions
-// Given a string, return a new string with the reversed
-// order of characters
-// --- Examples
-//   reverse('apple') === 'leppa'
-//   reverse('hello') === 'olleh'
-//   reverse('Greetings!') === '!sgniteerG'
+// Given a string, return a new string with the reversed order.
 
 function reverse1(str) {
   return str.split("").reverse().join("");
@@ -26,7 +20,7 @@ function reverse3(str) {
   return reversed;
 }
 
-// Instead of using for loops, try to use for of loops, so that you can avoid typos.
+// Instead of using for loops, try to use for of loops whenever you can, so that you can avoid typos.
 
 function reverse4(str) {
   let reversed = "";
@@ -36,4 +30,12 @@ function reverse4(str) {
   return reversed;
 }
 
-module.exports = reverse1;
+// reduce function (ES2015) is used to condense all given values within an array into one single value.
+
+function reverse5(str) {
+  return str
+    .split("")
+    .reduce((reversed, character) => character + reversed, "");
+}
+
+module.exports = reverse5;
