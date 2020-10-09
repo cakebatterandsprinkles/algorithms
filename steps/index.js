@@ -70,8 +70,6 @@ function steps3(n) {
   }
 }
 
-// recursion is not working!
-
 function steps4(n, row = 0, stair = "") {
   if (n < 0) {
     return "Negative number of steps are illogical.";
@@ -85,11 +83,11 @@ function steps4(n, row = 0, stair = "") {
 
   if (n === stair.length) {
     console.log(stair);
-    return steps4(n, row++);
+    return steps4(n, row + 1);
   }
 
   const add = stair.length <= row ? "#" : " ";
   steps4(n, row, stair + add);
 }
 
-module.exports = steps3;
+module.exports = steps4;
