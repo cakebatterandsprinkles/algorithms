@@ -4,24 +4,22 @@ test("anagram function exists", () => {
   expect(typeof anagram).toEqual("function");
 });
 
-test('"hello" is an anagram of "llohe"', () => {
-  expect(anagram("hello", "llohe")).toBeTruthy();
+test('"world" is an anagram of "dworl"', () => {
+  expect(anagram("world", "dworl")).toBeTruthy();
 });
 
-test('"Whoa! Hi!" is an anagram of "Hi! Whoa!"', () => {
-  expect(anagram("Whoa! Hi!", "Hi! Whoa!")).toBeTruthy();
+test('"Su baru!" is an anagram of "Ba rusu!"', () => {
+  expect(anagram("Su baru!", "Ba rusu!")).toBeTruthy();
 });
 
-test('"One One" is not an anagram of "Two two two"', () => {
-  expect(anagram("One One", "Two two two")).toBeFalsy();
+test('"Oh gosh why me" is not an anagram of "Alright, you got this!"', () => {
+  expect(anagram("Oh gosh why me", "Alright, you got this!")).toBeFalsy();
 });
 
-test('"One one" is not an anagram of "One one c"', () => {
-  expect(anagram("One one", "One one c")).toBeFalsy();
+test('"SAO" is not an anagram of "SAO 1"', () => {
+  expect(anagram("SAO", "SAO 1")).toBeFalsy();
 });
 
-test('"A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"', () => {
-  expect(
-    anagram("A tree, a life, a bench", "A tree, a fence, a yard")
-  ).toBeFalsy();
+test('"A bird is yellow" is not an anagram of "A tarp is purple"', () => {
+  expect(anagram("A bird is yellow", "A tarp is purple")).toBeFalsy();
 });
