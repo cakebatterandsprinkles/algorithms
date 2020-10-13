@@ -53,4 +53,42 @@ function anagram2(strA, strB) {
   return true;
 }
 
-module.exports = anagram2;
+// You can also solve this by using a helper function, like this:
+
+function buildCharMap(str) {
+  const charMap = {};
+  let modifiedStr = str.replace(/[^\w]/g, "").toLowerCase();
+  for (let char of modifiedStr) {
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+  return charMap;
+}
+
+function anagram3(strA, strB) {
+  if (strA.length !== strB.length) {
+    return false;
+  }
+
+  // we are going to use RegExp to get rid of spaces and exclamation marks.
+  let charMapA = buildCharMap(strA);
+  let charMapB = buildCharMap(strB);
+
+  for (let char in charMapA) {
+    if (!charMapB[char] || charMapA[char] !== charMapB[char]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+// You can do the same thing without character mapping by sorting the characters and comparing them.
+
+function sortString(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("");
+}
+
+function anagram4(strA, strB) {
+  return sortString(strA) === sortString(strB);
+}
+
+module.exports = anagram4;
