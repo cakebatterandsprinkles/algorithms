@@ -3,7 +3,7 @@
 // The first 10 numbers of fibonaccis series look like this: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 // So, fib(9) would print 34
 
-function fib(n) {
+function fib1(n) {
   let startArr = [0, 1];
   if (n >= 2) {
     for (let i = 2; i <= n; i++) {
@@ -13,4 +13,11 @@ function fib(n) {
   return startArr[n];
 }
 
-module.exports = fib;
+function fib2(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fib2(n - 1) + fib2(n - 2);
+}
+
+module.exports = fib2;
