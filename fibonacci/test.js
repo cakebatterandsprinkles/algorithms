@@ -27,3 +27,7 @@ test("calculates the result of fib(9) correctly", () => {
 test("calculates the result of fib(39) correctly", () => {
   expect(fib(39)).toEqual(63245986);
 });
+
+test("calculates the result of fib(39) correctly", () => {
+  expect(fib(39)).toEqual(63245986);
+});
