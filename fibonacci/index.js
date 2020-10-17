@@ -24,6 +24,13 @@ function fib2(n) {
 
 // Recursive solution with memoization:
 
+function slowfib(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fib3(n - 1) + fib3(n - 2);
+}
+
 function memoize(fn) {
   const cache = {};
   return function (...args) {
@@ -38,6 +45,6 @@ function memoize(fn) {
   };
 }
 
-const fib3 = memoize(fib2);
+const fib3 = memoize(slowfib);
 
 module.exports = fib3;
