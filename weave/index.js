@@ -7,13 +7,13 @@
 //    queueOne.add(1);
 //    queueOne.add(2);
 //    const queueTwo = new Queue();
-//    queueTwo.add('Hi');
-//    queueTwo.add('There');
+//    queueTwo.add('Hello');
+//    queueTwo.add('World');
 //    const q = weave(queueOne, queueTwo);
 //    q.remove() // 1
-//    q.remove() // 'Hi'
+//    q.remove() // 'Hello'
 //    q.remove() // 2
-//    q.remove() // 'There'
+//    q.remove() // 'World'
 
 const Queue = require("./queue");
 
