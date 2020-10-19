@@ -42,4 +42,29 @@ function pyramid1(n) {
   }
 }
 
-module.exports = pyramid1;
+function pyramid2(n, row = 0, level = "") {
+  if (n === 0) {
+    console.log("No pyramid!");
+  }
+
+  if (row === n) {
+    return;
+  }
+
+  if (level.length === 2 * n - 1) {
+    console.log(level);
+    return pyramid2(n, row + 1);
+  }
+
+  const midpoint = Math.floor((n * 2 - 1) / 2);
+  let add;
+  if (midpoint - row <= level.length && midpoint + row >= level.length) {
+    add = "#";
+  } else {
+    add = " ";
+  }
+
+  pyramid1(n, row, level + add);
+}
+
+module.exports = pyramid2;
