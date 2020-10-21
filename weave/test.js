@@ -6,14 +6,14 @@ test("queues have a peek function", () => {
   expect(typeof q.peek).toEqual("function");
 });
 
-test("peek returns, but does not remove, the first value", () => {
+test("peek returns the first value without removing it", () => {
   const q = new Queue();
-  q.add(1);
-  q.add(2);
-  expect(q.peek()).toEqual(1);
-  expect(q.peek()).toEqual(1);
-  expect(q.remove()).toEqual(1);
-  expect(q.remove()).toEqual(2);
+  q.add("a");
+  q.add("b");
+  expect(q.peek()).toEqual("a");
+  expect(q.remove()).toEqual("a");
+  expect(q.peek()).toEqual("b");
+  expect(q.remove()).toEqual("b");
 });
 
 test("weave is a function", () => {
@@ -21,25 +21,25 @@ test("weave is a function", () => {
 });
 
 test("weave can combine two queues", () => {
-  const one = new Queue();
-  one.add(1);
-  one.add(2);
-  one.add(3);
-  one.add(4);
-  const two = new Queue();
-  two.add("one");
-  two.add("two");
-  two.add("three");
-  two.add("four");
+  const first = new Queue();
+  first.add(12);
+  first.add(23);
+  first.add(34);
+  first.add(45);
+  const second = new Queue();
+  second.add("onetwo");
+  second.add("twothree");
+  second.add("threefour");
+  second.add("fourfive");
 
-  const result = weave(one, two);
-  expect(result.remove()).toEqual(1);
-  expect(result.remove()).toEqual("one");
-  expect(result.remove()).toEqual(2);
-  expect(result.remove()).toEqual("two");
-  expect(result.remove()).toEqual(3);
-  expect(result.remove()).toEqual("three");
-  expect(result.remove()).toEqual(4);
-  expect(result.remove()).toEqual("four");
+  const result = weave(first, second);
+  expect(result.remove()).toEqual(12);
+  expect(result.remove()).toEqual("onetwo");
+  expect(result.remove()).toEqual(23);
+  expect(result.remove()).toEqual("twothree");
+  expect(result.remove()).toEqual(34);
+  expect(result.remove()).toEqual("threefour");
+  expect(result.remove()).toEqual(45);
+  expect(result.remove()).toEqual("fourfive");
   expect(result.remove()).toBeUndefined();
 });
