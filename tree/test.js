@@ -36,8 +36,8 @@ describe("Tree", () => {
     expect(tree.root).toEqual(null);
   });
 
-  test("can traverse bf", () => {
-    const letters = [];
+  test("can traverse breadth-first", () => {
+    const nodeArr = [];
     const tree = new Tree();
     tree.root = new Node(1);
     tree.root.add("b");
@@ -45,14 +45,14 @@ describe("Tree", () => {
     tree.root.children[0].add("d");
 
     tree.traverseBF((node) => {
-      letters.push(node.data);
+      nodeArr.push(node.data);
     });
 
-    expect(letters).toEqual([1, "b", 3, "d"]);
+    expect(nodeArr).toEqual([1, "b", 3, "d"]);
   });
 
-  test("can traverse DF", () => {
-    const letters = [];
+  test("can traverse depth-first", () => {
+    const nodeArr = [];
     const tree = new Tree();
     tree.root = new Node("a");
     tree.root.add("b");
@@ -60,9 +60,9 @@ describe("Tree", () => {
     tree.root.children[0].add("c");
 
     tree.traverseDF((node) => {
-      letters.push(node.data);
+      nodeArr.push(node.data);
     });
 
-    expect(letters).toEqual(["a", "b", "c", "d"]);
+    expect(nodeArr).toEqual(["a", "b", "c", "d"]);
   });
 });
