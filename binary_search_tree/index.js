@@ -12,7 +12,6 @@ class Node {
     this.right = null;
   }
 
-  // recursive solution:
   insert(data) {
     if (data > this.data && this.right) {
       this.right.insert(data);
