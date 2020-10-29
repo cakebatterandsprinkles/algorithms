@@ -1,9 +1,6 @@
 // Implement bubbleSort.
 
 function bubbleSort(arr) {
-  if (!arr.length) {
-    return;
-  }
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
       let num1 = arr[j];
