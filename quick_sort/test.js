@@ -5,7 +5,7 @@ describe("Quicksort", () => {
     expect(typeof quickSort).toEqual("function");
   });
 
-  test("quickSort sorts an array", () => {
+  test("sorts an array", () => {
     expect(quickSort([120, -48, 12, 612, -144, 29, 0, 12, 26])).toEqual([
       -144,
       -48,
